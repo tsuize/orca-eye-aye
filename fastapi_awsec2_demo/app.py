@@ -1,14 +1,9 @@
-import uvicorn
 from fastapi import FastAPI
 
+# Instantiate the class
 app = FastAPI()
 
-
+# Define a GET method on the specified endpoint
 @app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
- # at last, the bottom of the file/module
-if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=5049)
+def hello():
+    return {"result": "Welcome to FastAPI"}
